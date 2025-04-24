@@ -37,9 +37,6 @@ export default function Home() {
 >
   The Prompt Guild
 </h1>
-          DnD Character + AI Prompting Portfolio
-        </h1>
-
         <section style={{ backgroundColor: '#fff', padding: '1rem', borderRadius: '8px', marginTop: '2rem' }}>
           <h2 style={{ fontSize: '1.5rem', marginBottom: '1rem' }}>Character Stats</h2>
           {Object.keys(stats).map((stat) => (
