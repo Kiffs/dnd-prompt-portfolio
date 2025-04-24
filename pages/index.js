@@ -26,27 +26,7 @@ export default function Home() {
   return (
     <main style={{ padding: '2rem', fontFamily: 'sans-serif', backgroundColor: '#f3f4f6', minHeight: '100vh' }}>
       <div style={{ maxWidth: '700px', margin: '0 auto' }}>
-        <h1
-          style={{
-            fontSize: '5.5rem',
-            fontWeight: '900',
-            textAlign: 'center',
-            marginBottom: '2rem',
-            letterSpacing: '0.05em',
-            background: 'url("/cyber-victorian-bg.png") center/cover',
-            backgroundClip: 'text',
-            WebkitBackgroundClip: 'text',
-            color: 'transparent',
-            fontFamily: "'Orbitron', sans-serif",
-            textShadow: `
-              2px 2px 4px rgba(0,255,255,0.8),
-              4px 4px 8px rgba(0,255,255,0.6),
-              0 0 10px rgba(0,255,255,0.8),
-              0 0 15px rgba(0,255,255,0.6)`
-          }}
-        >
-          The Prompt Guild
-        </h1>
+        <h1 className="header-neon">The Prompt Guild</h1>
 
         <section style={{ backgroundColor: '#fff', padding: '1rem', borderRadius: '8px', marginTop: '2rem' }}>
           <h2 style={{ fontSize: '1.5rem', marginBottom: '1rem' }}>Character Stats</h2>
