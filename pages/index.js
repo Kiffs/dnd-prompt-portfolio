@@ -15,7 +15,28 @@ export default function Home() {
   return (
     <main style={{ padding: '2rem', fontFamily: 'sans-serif', backgroundColor: '#f3f4f6', minHeight: '100vh' }}>
       <div style={{ maxWidth: '700px', margin: '0 auto' }}>
-        <h1 style={{ fontSize: '2rem', fontWeight: 'bold', textAlign: 'center' }}>
+        <h1
+  style={{
+    fontSize: '3rem',
+    fontWeight: '700',
+    textAlign: 'center',
+    marginBottom: '1rem',
+    background: 'url("/cyber-victorian-bg.png")',
+    backgroundSize: 'cover',
+    backgroundClip: 'text',
+    WebkitBackgroundClip: 'text',
+    color: 'transparent',
+    fontFamily: "'Orbitron', sans-serif",
+    textShadow: `
+      0 0 5px #0ff,
+      0 0 10px #0ff,
+      0 0 20px #0ff,
+      0 0 40px #0ff
+    `
+  }}
+>
+  The Prompt Guild
+</h1>
           DnD Character + AI Prompting Portfolio
         </h1>
 
