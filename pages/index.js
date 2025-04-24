@@ -1,8 +1,10 @@
 import { useState } from "react";
 
 export default function Home() {
-  const [stats, setStats] = useState({ STR: 10, DEX: 10, INT: 10 });
   const [diceResult, setDiceResult] = useState(null);
+  const [minStat, setMinStat] = useState(1);
+  const [maxStat, setMaxStat] = useState(20);
+  const [stats, setStats] = useState({ STR: null, DEX: null, INT: null });
 
   function rollDice(sides, count = 1) {
     let total = 0;
@@ -12,45 +14,67 @@ export default function Home() {
     setDiceResult(`${count}d${sides} → ${total}`);
   }
 
+  function rollStats() {
+    const range = maxStat - minStat + 1;
+    setStats({
+      STR: Math.floor(Math.random() * range) + minStat,
+      DEX: Math.floor(Math.random() * range) + minStat,
+      INT: Math.floor(Math.random() * range) + minStat
+    });
+  }
+
   return (
     <main style={{ padding: '2rem', fontFamily: 'sans-serif', backgroundColor: '#f3f4f6', minHeight: '100vh' }}>
       <div style={{ maxWidth: '700px', margin: '0 auto' }}>
         <h1
-  style={{
-    fontSize: '5.5rem',
-    fontWeight: '900',
-    textAlign: 'center',
-    marginBottom: '2rem',
-    letterSpacing: '0.05em',
-    background: 'url("/cyber-victorian-bg.png") center/cover',
-    backgroundClip: 'text',
-    WebkitBackgroundClip: 'text',
-    color: 'transparent',
-    fontFamily: "'Orbitron', sans-serif",
-    textShadow: `
-      2px 2px 4px rgba(0,255,255,0.8),
-      4px 4px 8px rgba(0,255,255,0.6),
-      0 0 10px rgba(0,255,255,0.8),
-      0 0 15px rgba(0,255,255,0.6)
-    `
-  }}
->
-  The Prompt Guild
-</h1>
+          style={{
+            fontSize: '5.5rem',
+            fontWeight: '900',
+            textAlign: 'center',
+            marginBottom: '2rem',
+            letterSpacing: '0.05em',
+            background: 'url("/cyber-victorian-bg.png") center/cover',
+            backgroundClip: 'text',
+            WebkitBackgroundClip: 'text',
+            color: 'transparent',
+            fontFamily: "'Orbitron', sans-serif",
+            textShadow: `
+              2px 2px 4px rgba(0,255,255,0.8),
+              4px 4px 8px rgba(0,255,255,0.6),
+              0 0 10px rgba(0,255,255,0.8),
+              0 0 15px rgba(0,255,255,0.6)`
+          }}
+        >
+          The Prompt Guild
+        </h1>
+
         <section style={{ backgroundColor: '#fff', padding: '1rem', borderRadius: '8px', marginTop: '2rem' }}>
           <h2 style={{ fontSize: '1.5rem', marginBottom: '1rem' }}>Character Stats</h2>
-          {Object.keys(stats).map((stat) => (
-            <div key={stat} style={{ marginBottom: '1rem' }}>
-              <label>{stat}: {stats[stat]}</label><br />
-              <input
-                type="range"
-                min="1"
-                max="20"
-                value={stats[stat]}
-                onChange={(e) => setStats((prev) => ({ ...prev, [stat]: parseInt(e.target.value) }))}
-              />
-            </div>
-          ))}
+
+          <div style={{ marginBottom: '1rem' }}>
+            <label>Min Stat: </label>
+            <input
+              type="number"
+              value={minStat}
+              onChange={(e) => setMinStat(Number(e.target.value))}
+              style={{ marginRight: '1rem', padding: '0.25rem' }}
+            />
+            <label>Max Stat: </label>
+            <input
+              type="number"
+              value={maxStat}
+              onChange={(e) => setMaxStat(Number(e.target.value))}
+              style={{ padding: '0.25rem' }}
+            />
+          </div>
+
+          <button onClick={rollStats} style={{ padding: '0.5rem 1rem', marginBottom: '1rem' }}>Roll Stats</button>
+
+          <div>
+            <p>STR: {stats.STR !== null ? stats.STR : '-'}</p>
+            <p>DEX: {stats.DEX !== null ? stats.DEX : '-'}</p>
+            <p>INT: {stats.INT !== null ? stats.INT : '-'}</p>
+          </div>
         </section>
 
         <section style={{ backgroundColor: '#fff', padding: '1rem', borderRadius: '8px', marginTop: '2rem' }}>
