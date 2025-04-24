@@ -26,7 +26,25 @@ export default function Home() {
   return (
     <main style={{ padding: '2rem', fontFamily: 'sans-serif', backgroundColor: '#f3f4f6', minHeight: '100vh' }}>
       <div style={{ maxWidth: '700px', margin: '0 auto' }}>
-        <h1 className="header-neon">The Prompt Guild</h1>
+        <h1
+  className="text-center font-extrabold text-[6rem] leading-tight"
+  style={{
+    background: 'url("/prompt-guild-neon.png") center/cover no-repeat',
+    WebkitBackgroundClip: 'text',
+    backgroundClip: 'text',
+    color: 'transparent',
+    fontFamily: "'Orbitron', sans-serif",
+    animation: 'neonPulse 2s ease-in-out infinite',
+    textShadow: `
+      0 0 4px #0ff,
+      0 0 8px #0ff,
+      0 0 12px #0ff,
+      0 0 16px #0ff
+    `
+  }}
+>
+  The Prompt Guild
+</h1>
 
         <section style={{ backgroundColor: '#fff', padding: '1rem', borderRadius: '8px', marginTop: '2rem' }}>
           <h2 style={{ fontSize: '1.5rem', marginBottom: '1rem' }}>Character Stats</h2>
