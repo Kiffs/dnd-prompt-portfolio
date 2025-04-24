@@ -17,26 +17,26 @@ export default function Home() {
       <div style={{ maxWidth: '700px', margin: '0 auto' }}>
         <h1
   style={{
-    fontSize: '3rem',
-    fontWeight: '700',
+    fontSize: '6rem',
+    fontWeight: '900',
     textAlign: 'center',
-    marginBottom: '1rem',
-    background: 'url("/cyber-victorian-bg.png")',
-    backgroundSize: 'cover',
+    marginBottom: '2rem',
+    letterSpacing: '0.05em',
+    background: 'url("/cyber-victorian-bg.png") center/cover',
     backgroundClip: 'text',
     WebkitBackgroundClip: 'text',
     color: 'transparent',
     fontFamily: "'Orbitron', sans-serif",
     textShadow: `
-      0 0 5px #0ff,
-      0 0 10px #0ff,
-      0 0 20px #0ff,
-      0 0 40px #0ff
+      0 0 2px #0ff,
+      0 0 4px #0ff,
+      0 0 8px #0ff
     `
   }}
 >
   The Prompt Guild
 </h1>
+
         <section style={{ backgroundColor: '#fff', padding: '1rem', borderRadius: '8px', marginTop: '2rem' }}>
           <h2 style={{ fontSize: '1.5rem', marginBottom: '1rem' }}>Character Stats</h2>
           {Object.keys(stats).map((stat) => (
