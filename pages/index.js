@@ -17,7 +17,7 @@ export default function Home() {
       <div style={{ maxWidth: '700px', margin: '0 auto' }}>
         <h1
   style={{
-    fontSize: '6rem',
+    fontSize: '5.5rem',
     fontWeight: '900',
     textAlign: 'center',
     marginBottom: '2rem',
@@ -28,15 +28,15 @@ export default function Home() {
     color: 'transparent',
     fontFamily: "'Orbitron', sans-serif",
     textShadow: `
-      0 0 2px #0ff,
-      0 0 4px #0ff,
-      0 0 8px #0ff
+      2px 2px 4px rgba(0,255,255,0.8),
+      4px 4px 8px rgba(0,255,255,0.6),
+      0 0 10px rgba(0,255,255,0.8),
+      0 0 15px rgba(0,255,255,0.6)
     `
   }}
 >
   The Prompt Guild
 </h1>
-
         <section style={{ backgroundColor: '#fff', padding: '1rem', borderRadius: '8px', marginTop: '2rem' }}>
           <h2 style={{ fontSize: '1.5rem', marginBottom: '1rem' }}>Character Stats</h2>
           {Object.keys(stats).map((stat) => (
